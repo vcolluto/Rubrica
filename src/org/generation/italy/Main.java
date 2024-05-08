@@ -29,9 +29,11 @@ public class Main {
 			daCercare=sc.nextLine();
 			trovato=false;
 			for (i=0;i<nomi.length;i++)
-				if (nomi[i].equalsIgnoreCase(daCercare) || numeri[i].equals(daCercare)) {
+				if (nomi[i].toLowerCase().indexOf(daCercare.toLowerCase())>=0 || 
+					numeri[i].toLowerCase().indexOf(daCercare.toLowerCase())>=0) {
 					trovato=true;
 					System.out.println("Nome: " + nomi[i] + "   Numero: " + numeri[i]);
+					//System.out.println("Parola trovata in posizione: "+nomi[i].toLowerCase().indexOf(daCercare.toLowerCase()));
 				}
 			if (!trovato)		//trovato==false
 				System.out.println("Nome/numero non trovato!");
